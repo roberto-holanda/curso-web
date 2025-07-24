@@ -1,0 +1,138 @@
+body{
+    margin: 0;
+    background-color: #ccc;
+}
+
+
+body::selection{
+    background-color: brown;
+    color: yellow;
+}
+
+#content .header-content{
+    background: url("img/bg-3.jpg") no-repeat right center / cover scroll;
+    border-top: 1px solid transparent;
+    height: 500px;
+    width: 100%;
+}
+
+.header-content .nav-content ul{
+    text-align: end;
+    margin-right: 10px;
+}
+
+.header-content .nav-content ul li{
+    display: inline-block;
+    margin: 5px;
+}
+
+.header-content .nav-content ul li a{
+    text-decoration: none;
+    text-transform: uppercase;
+    color: white;
+    background-color: rgba(128, 128, 128, 0.336);
+    border: 1px solid white;
+    padding: 10px;
+    font-size: 16px;
+    transition: all 0.3s ease-in;
+}
+
+.header-content .nav-content ul li a:hover{
+    border-radius: 10px;
+}
+
+
+.header-content h1, p{
+    margin-top: 10%;
+    cursor: default;
+}
+
+.header-content h1{
+    text-transform: uppercase;
+    text-shadow: 2px 2px 2px black;
+    text-align: center;
+    color: white;
+    font-size: 46px;
+}
+
+.header-content p{
+    text-align: center;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.589);
+    width: 20%;
+    margin: auto;
+    padding: 10px;
+    border-bottom: 1px solid white;
+}
+
+.header-content p abbr{
+    text-decoration: none;
+    cursor: help;
+}
+
+main{
+    margin: auto;
+    width: 80%;
+}
+
+main .courses, .description-course{
+    margin-top: 10px;
+    background-color: white;
+}
+
+main .courses{
+    padding: 5px;
+    display: flex;
+    justify-content: space-between;
+}
+
+main .courses .cards img{
+    display: block;
+    width: 100%;
+    margin-bottom: 0;
+}
+
+main .courses .cards p{
+    text-transform: uppercase;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.842);
+    color: white;
+    padding: 10px;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 18px;
+    border-bottom-right-radius: 10px;
+}
+
+main .description-course{
+    padding: 3px;
+    margin-bottom: 0;
+}
+
+main .description-course .title-description{
+    background-color: whitesmoke;
+    padding: 4px;
+    border-bottom: 1px solid gray;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+main .description-course .paragraph-description{
+    font-variant: small-caps;
+    text-align: center;
+    margin-top: 8px;
+}
+
+#content .footer-content{
+    background-color: rgba(36, 30, 30, 0.555);
+}
+
+#content .footer-content .paragraph-footer{
+    padding: 10px;
+    color: white;
+    text-align: center;
+    margin-top: 5px;
+    margin-bottom: 0;
+    text-shadow: 2px 2px 2px black;
+    padding: 30px;
+}

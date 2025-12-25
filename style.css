@@ -1,4 +1,4 @@
-*{
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
@@ -6,36 +6,46 @@
     cursor: default;
 }
 
-body{
+html, body {
+    height: 100%;
+}
+
+body {
     background-color: #ccc;
+    display: flex;
+    flex-direction: column;
 }
 
-body::selection{
+body::selection {
     background-color: orange;
     color: red;
 }
 
-::-moz-selection{
+::-moz-selection {
     background-color: orange;
     color: red;
 }
 
-.header-content{
+.content-wrapper {
+    flex: 1 0 auto;
+}
+
+.header-content {
     background: url("images/bg-3.jpg") no-repeat bottom right / 100% 100% scroll;
     height: 600px;
     width: 100%;
 }
 
-.nav-content{
+.nav-content {
     text-align: end;
 }
 
-.ul-links{
+.ul-links {
     list-style-type: none;
     margin-right: 2%;
 }
 
-.ul-links li{
+.ul-links li {
     display: inline-block; 
     margin-top: 16px;
     margin-right: 10px;
@@ -44,35 +54,35 @@ body::selection{
     transition: all .3s;
 }
 
-.ul-links li:hover{
+.ul-links li:hover {
     border-radius: 16px;
 }
 
-.ul-links li a{
+.ul-links li a {
     color: white;
     text-decoration: none;
     font-size: 12px;
     text-transform: uppercase;
 }
 
-.ul-links li a:hover{
+.ul-links li a:hover {
     cursor: pointer;
 }
 
-.titles-header{
+.titles-header {
     text-align: center;
-    margin-top: 12%;
+    margin-top: 10%;
     color: white;
 }
 
-.titles-header h1{
+.titles-header h1 {
     font-size: 54px;
     text-shadow: 2px 2px 2px black;
     margin-bottom: 16px;
     text-transform: uppercase;
 }
 
-.style-reduced{
+.style-reduced {
     display: block;
     margin-bottom: -10px;
     font-size: 27px;
@@ -82,35 +92,30 @@ body::selection{
     border-bottom-left-radius: 20px;
 }
 
-.titles-header p{
+.titles-header p {
     background-color: rgba(0, 0, 0, 0.6);
     width: 30%;
     padding: 12px;
     margin: auto;
 }
 
-.link-meaning{
+.link-meaning {
     text-decoration: none;
     color: white;
 }
 
-.link-meaning:hover{
+.link-meaning:hover {
     cursor: help;
     color: black;
     text-shadow: 3px 3px 15px white;
 }
 
-.titles-header p abbr{
-    text-decoration: none;
-}
-
-
-main{
+main {
     width: 70%;
     margin: auto;
 }
 
-.cards-section{
+.cards-section {
     background-color: #fff;
     margin-top: 16px;
     padding: 10px;
@@ -118,35 +123,44 @@ main{
     gap: 16px;
 }
 
-.cards img{
+.cards {
+    flex: 1;
+}
+
+.cards img {
+    width: 100%;
+    height: 200px; 
+    object-fit: cover; 
     display: block;
 }
 
-.cards p{
+.cards p {
     color: white;
     background-color: rgba(0, 0, 0, 0.8);
     padding: 16px;
     letter-spacing: 5px;
     text-transform: uppercase;
+    text-align: center;
 }
 
-.description{
+.description {
     background-color: #fff;
     margin-top: 16px;
     padding: 10px;
 }
 
-.description h2{
+.description h2 {
     background-color: rgba(0, 0, 0, 0.2);
     border-bottom: 2px solid rgba(0, 0, 0, 0.171);
     padding: 10px;
 }
 
-.description p{
+.description p {
     margin-top: 16px;
 }
 
-.footer-content{
+.footer-content {
+    flex-shrink: 0;
     background-color: rgba(0, 0, 0, 0.5);
     color: white;
     margin-top: 16px;
@@ -155,32 +169,62 @@ main{
     text-shadow: 2px 2px 2px black;
 }
 
-.date-time-container{
+.date-time-container {
     position: fixed;
     top: 10px;
     left: 10px;
     background-color: #f5f5f5;
     padding: 12px 20px;
-    width: auto;
-    min-width: 250px;
-    text-align: left;
-    border-top: 3px solid rgba(0, 0, 0, 0.2);
-    border-bottom-left-radius: 12px;
-    border-bottom-right-radius: 12px;
-    z-index: 1000;
+    z-index: 9999;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    border-radius: 0 0 12px 12px;
+    border-top: 3px solid rgba(0, 0, 0, 0.2);
 }
 
-.date-time-container p{
-    color: rgba(0, 0, 0, 0.8);
+.date-time-container p {
+    color: rgba(0, 0, 0, 0.8) !important;
+    background: transparent !important;
     font-size: 14px;
-    font-weight: 500;
-    letter-spacing: 0.3px;
     margin: 4px 0;
+    width: auto !important;
 }
 
-.date-time-container .location-info{
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-    padding-bottom: 8px;
-    margin-bottom: 8px;
+@media (max-width: 768px) {
+    .header-content {
+        background-size: cover;
+        background-position: center;
+        height: auto;
+        min-height: 400px;
+        padding-bottom: 20px;
+    }
+
+    .ul-links {
+        text-align: center;
+        margin-right: 0;
+        padding: 10px;
+    }
+
+    .ul-links li {
+        width: 45%;
+        margin: 5px;
+        display: inline-block;
+    }
+
+    .titles-header h1 { font-size: 28px; }
+    .titles-header p, .style-reduced { width: 90%; }
+
+    main { width: 95%; }
+
+    .cards-section {
+        flex-direction: column;
+    }
+
+    .date-time-container {
+        position: relative;
+        width: 100%;
+        top: 0;
+        left: 0;
+        border-radius: 0;
+        text-align: center;
+    }
 }

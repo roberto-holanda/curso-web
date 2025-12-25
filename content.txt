@@ -1,0 +1,165 @@
+TÍTULO DO PROJETO
+Curso Web Fundamentos
+
+BADGES
+HTML5
+CSS3
+JavaScript
+PHP
+
+DESCRIÇÃO PRINCIPAL
+Projeto educacional de curso web completo sobre fundamentos de desenvolvimento front-end, incluindo HTML, CSS e JavaScript, com integração de API PHP para exibição de data, hora e localização do usuário.
+
+SOBRE O PROJETO
+Este projeto é uma página web educacional que apresenta um curso completo sobre fundamentos de desenvolvimento web. O site demonstra conceitos de HTML semântico, CSS moderno e JavaScript, além de integrar uma API PHP que fornece informações em tempo real sobre data, hora e localização geográfica do usuário.
+
+FUNCIONALIDADES
+Interface responsiva e moderna
+Navegação com menu superior
+Cards informativos sobre tópicos do curso (Seletores, Posicionamento, Fontes e Ícones)
+Exibição dinâmica de data e hora em tempo real
+Geolocalização automática do usuário
+Footer dinâmico com copyright atualizado automaticamente
+Meta tags otimizadas para SEO e compartilhamento em redes sociais
+API RESTful em PHP para fornecer dados de data/hora e localização
+
+TECNOLOGIAS
+HTML5 - Estrutura semântica da página
+CSS3 - Estilização e layout responsivo
+JavaScript (ES6+) - Interatividade e consumo de API
+PHP 7.4+ - API backend para dados dinâmicos
+JSON - Formato de dados da API
+
+PRÉ-REQUISITOS
+PHP (versão 7.4 ou superior)
+Um servidor web local (XAMPP, WAMP, MAMP ou PHP Built-in Server)
+Navegador web moderno (Chrome, Firefox, Edge, Safari)
+
+COMANDO CLONE
+git clone https://github.com/seu-usuario/curso-web.git
+
+COMANDO NAVEGAÇÃO
+cd curso-web
+
+IMAGENS NECESSÁRIAS
+bg-3.jpg
+card_01.png
+card_02.jpg
+card_05.jpg
+computador-portatil.png
+
+OPÇÃO 1 TÍTULO
+Usando o Servidor Built-in do PHP (Recomendado)
+
+OPÇÃO 1 PASSO 1
+Abra o terminal na pasta do projeto
+
+OPÇÃO 1 COMANDO
+php -S localhost:8000
+
+OPÇÃO 1 ACESSO
+http://localhost:8000
+
+OPÇÃO 2 TÍTULO
+Usando XAMPP/WAMP/MAMP
+
+OPÇÃO 2 PASSO 1
+Copie a pasta do projeto para o diretório do servidor
+
+OPÇÃO 2 DIRETÓRIOS
+XAMPP: C:\xampp\htdocs\curso-web\
+WAMP: C:\wamp64\www\curso-web\
+MAMP: /Applications/MAMP/htdocs/curso-web/
+
+OPÇÃO 2 PASSO 2
+Inicie o servidor Apache através do painel de controle
+
+OPÇÃO 2 ACESSO
+http://localhost/curso-web
+
+OPÇÃO 3 TÍTULO
+Usando Servidor Web Configurado
+
+OPÇÃO 3 PASSO 1
+Copiar os arquivos para o diretório do servidor
+
+OPÇÃO 3 PASSO 2
+Acessar através da URL configurada
+
+ESTRUTURA ARQUIVOS
+index.html - Página principal
+style.css - Estilos da aplicação
+script.js - Lógica JavaScript
+api.php - API PHP para data/hora e localização
+README.md - Documentação do projeto
+content.txt - Elementos de texto separados
+
+ESTRUTURA IMAGENS
+bg-3.jpg
+card_01.png
+card_02.jpg
+card_05.jpg
+computador-portatil.png
+
+API ENDPOINT
+GET /api.php
+
+API RESPOSTA EXEMPLO
+{
+    "pais": "Brasil",
+    "cidade": "São Paulo",
+    "dia": "Segunda-feira, 15 de Janeiro de 2024",
+    "hora": "14:30:45"
+}
+
+API FUNCIONALIDADES
+Data e Hora Formatadas: Retorna a data completa em português e hora atual
+Geolocalização: Identifica automaticamente o país e cidade do usuário através do IP
+Timezone: Configurado para America/Sao_Paulo (Brasil)
+Tratamento de Erros: Valida IP e trata falhas na API de geolocalização
+
+API DEPENDÊNCIAS
+ipify.org - Para obter IP público quando em localhost
+ip-api.com - Para geolocalização baseada em IP
+
+API EXEMPLO CÓDIGO
+fetch('api.php')
+    .then(response => response.json())
+    .then(data => {
+        console.log(data.pais);
+        console.log(data.cidade);
+        console.log(data.dia);
+        console.log(data.hora);
+    });
+
+CONFIGURAÇÃO TIMEZONE
+Para alterar o fuso horário, edite o arquivo api.php e altere a linha date_default_timezone_set
+
+CONFIGURAÇÃO URL
+Para produção, atualize as URLs nas meta tags do index.html substituindo https://cursoweb.com/ pela URL real do seu site
+
+USO PASSO 1
+Acesse a página: Abra index.html ou acesse via servidor local
+
+USO PASSO 2
+Navegação: Use o menu superior para navegar (Home, Contate-nos, Sobre Nós)
+
+USO PASSO 3
+Visualização de Dados: A data, hora e localização são atualizadas automaticamente a cada segundo
+
+USO PASSO 4
+Cards Informativos: Visualize os cards sobre os tópicos do curso
+
+FUNCIONALIDADES JAVASCRIPT
+Footer Dinâmico: Criado automaticamente com o ano atual
+Data/Hora em Tempo Real: Atualização a cada segundo via API
+Geolocalização: Exibição automática da cidade e país do usuário
+
+AUTOR NOME
+Roberto Holanda
+
+LICENÇA
+Este projeto está sob a licença MIT. Veja o arquivo LICENSE para mais detalhes.
+
+MENSAGEM FINAL
+Se este projeto foi útil para você, considere dar uma estrela no repositório!

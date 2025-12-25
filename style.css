@@ -1,0 +1,186 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    cursor: default;
+}
+
+body{
+    background-color: #ccc;
+}
+
+body::selection{
+    background-color: orange;
+    color: red;
+}
+
+::-moz-selection{
+    background-color: orange;
+    color: red;
+}
+
+.header-content{
+    background: url("images/bg-3.jpg") no-repeat bottom right / 100% 100% scroll;
+    height: 600px;
+    width: 100%;
+}
+
+.nav-content{
+    text-align: end;
+}
+
+.ul-links{
+    list-style-type: none;
+    margin-right: 2%;
+}
+
+.ul-links li{
+    display: inline-block; 
+    margin-top: 16px;
+    margin-right: 10px;
+    border: 1px solid white;
+    padding: 12px;
+    transition: all .3s;
+}
+
+.ul-links li:hover{
+    border-radius: 16px;
+}
+
+.ul-links li a{
+    color: white;
+    text-decoration: none;
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+.ul-links li a:hover{
+    cursor: pointer;
+}
+
+.titles-header{
+    text-align: center;
+    margin-top: 12%;
+    color: white;
+}
+
+.titles-header h1{
+    font-size: 54px;
+    text-shadow: 2px 2px 2px black;
+    margin-bottom: 16px;
+    text-transform: uppercase;
+}
+
+.style-reduced{
+    display: block;
+    margin-bottom: -10px;
+    font-size: 27px;
+    border-bottom: 2px solid whitesmoke;
+    width: 20%;
+    margin: auto;
+    border-bottom-left-radius: 20px;
+}
+
+.titles-header p{
+    background-color: rgba(0, 0, 0, 0.6);
+    width: 30%;
+    padding: 12px;
+    margin: auto;
+}
+
+.link-meaning{
+    text-decoration: none;
+    color: white;
+}
+
+.link-meaning:hover{
+    cursor: help;
+    color: black;
+    text-shadow: 3px 3px 15px white;
+}
+
+.titles-header p abbr{
+    text-decoration: none;
+}
+
+
+main{
+    width: 70%;
+    margin: auto;
+}
+
+.cards-section{
+    background-color: #fff;
+    margin-top: 16px;
+    padding: 10px;
+    display: flex;
+    gap: 16px;
+}
+
+.cards img{
+    display: block;
+}
+
+.cards p{
+    color: white;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 16px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+}
+
+.description{
+    background-color: #fff;
+    margin-top: 16px;
+    padding: 10px;
+}
+
+.description h2{
+    background-color: rgba(0, 0, 0, 0.2);
+    border-bottom: 2px solid rgba(0, 0, 0, 0.171);
+    padding: 10px;
+}
+
+.description p{
+    margin-top: 16px;
+}
+
+.footer-content{
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    margin-top: 16px;
+    padding: 24px;
+    text-align: center;
+    text-shadow: 2px 2px 2px black;
+}
+
+.date-time-container{
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    background-color: #f5f5f5;
+    padding: 12px 20px;
+    width: auto;
+    min-width: 250px;
+    text-align: left;
+    border-top: 3px solid rgba(0, 0, 0, 0.2);
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+    z-index: 1000;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.date-time-container p{
+    color: rgba(0, 0, 0, 0.8);
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+    margin: 4px 0;
+}
+
+.date-time-container .location-info{
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    padding-bottom: 8px;
+    margin-bottom: 8px;
+}

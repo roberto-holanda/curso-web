@@ -1,0 +1,598 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #ccc;
+    /* Barra de scroll invisível - Firefox */
+    scrollbar-width: none;
+    /* Barra de scroll invisível - Internet Explorer 10+ */
+    -ms-overflow-style: none;
+}
+
+body::selection {
+    background-color: orange;
+    color: red;
+}
+
+::-moz-selection {
+    background-color: orange;
+    color: red;
+}
+
+/* Barra de scroll invisível - Chrome, Safari, Edge (Chromium), Opera, Brave */
+body::-webkit-scrollbar {
+    display: none;
+    width: 0;
+    height: 0;
+}
+
+/* Compatibilidade adicional para navegadores antigos */
+html {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+html::-webkit-scrollbar {
+    display: none;
+    width: 0;
+    height: 0;
+}
+
+/* BARRA DE PROGRESSO */
+.scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 5px;
+    background: linear-gradient(90deg, #ff6b6b, #ffa500, #ff6b6b);
+    z-index: 9999;
+    transition: width 0.1s ease;
+    box-shadow: 0 2px 10px rgba(255, 107, 107, 0.5);
+}
+
+.header-content {
+    background: url("images/bg-3.jpg") no-repeat bottom right / 100% 100% scroll;
+    height: 650px;
+}
+
+.nav-header-content {
+    text-align: end;
+}
+
+.ul-links li {
+    display: inline-block;
+    list-style-type: none;
+    margin-top: 32px;
+    margin-right: 32px;
+}
+
+.ul-links li a {
+    text-decoration: none;
+    color: white;
+    border: 1px solid white;
+    padding: 16px;
+    text-transform: uppercase;
+    font-size: 12px;
+    transition: all .3s ease;
+}
+
+.ul-links li a:hover {
+    border-radius: 16px;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.ul-links li a:active {
+    background-color: white;
+    color: black;
+}
+
+.titles-header {
+    color: white;
+    text-align: center;
+    margin-top: 15%;
+}
+
+.titles-header h1 {
+    font-size: 56px;
+    text-shadow: 2px 2px 2px black;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+}
+
+.style-small {
+    display: block;
+    text-transform: none;
+    font-size: 28px;
+    border-bottom: 1px solid white;
+    width: 20%;
+    margin: auto;
+    border-bottom-left-radius: 16px;
+}
+
+.titles-header p {
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 16px;
+    width: 30%;
+    margin: auto;
+}
+
+.titles-header p abbr {
+    text-decoration: none;
+}
+
+.titles-header p abbr a {
+    text-decoration: none;
+    color: white;
+    transition: all .3s ease;
+}
+
+.titles-header p abbr a:hover {
+    cursor: help;
+    text-shadow: 2px 2px 8px white;
+    color: black;
+}
+
+main {
+    margin: auto;
+    width: 925px;
+}
+
+.cards-section {
+    background-color: white;
+    padding: 12px;
+    margin-top: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+}
+
+/* ANIMAÇÕES DE FADE-IN  */
+
+.cards {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease;
+}
+
+.cards.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.cards img {
+    display: block;
+    width: 100%;
+}
+
+.cards p {
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 16px;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.description {
+    background-color: white;
+    margin-top: 16px;
+    padding: 16px;
+}
+
+.description.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.description h2 {
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: 16px;
+    border-bottom: 2px solid gray;
+    margin-bottom: 16px;
+}
+
+.description p {
+    margin-bottom: 16px;
+    text-indent: 16px;
+}
+
+.footer-content {
+    background-color: rgba(0, 0, 0, 0.8);
+    text-align: center;
+    color: white;
+    padding: 16px;
+    margin-top: 16px;
+    text-shadow: 2px 2px 2px black;
+}
+
+.back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    border: 2px solid white;
+    border-radius: 50%;
+    font-size: 24px;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.back-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.back-to-top:hover {
+    background-color: white;
+    color: black;
+    transform: translateY(-5px);
+}
+
+/* RESPONSIVIDADE */
+/* TVs e Telas Ultra Largas (1920px+) */
+@media (min-width: 1920px) {
+    main {
+        width: 1400px;
+    }
+
+    .header-content {
+        height: 900px;
+    }
+
+    .titles-header {
+        margin-top: 12%;
+    }
+
+    .titles-header h1 {
+        font-size: 72px;
+    }
+
+    .style-small {
+        font-size: 36px;
+        width: 25%;
+    }
+
+    .titles-header p {
+        width: 35%;
+        font-size: 20px;
+        padding: 24px;
+    }
+
+    .ul-links li {
+        margin-right: 48px;
+    }
+
+    .ul-links li a {
+        padding: 20px 28px;
+        font-size: 16px;
+    }
+
+    .cards-section {
+        padding: 24px;
+        gap: 12px;
+    }
+
+    .cards img {
+        height: 280px;
+        object-fit: cover;
+    }
+
+    .cards p {
+        padding: 20px;
+        font-size: 16px;
+    }
+
+    .description {
+        padding: 24px;
+        font-size: 18px;
+    }
+
+    .description h2 {
+        padding: 24px;
+        font-size: 28px;
+    }
+
+    .back-to-top {
+        width: 60px;
+        height: 60px;
+        font-size: 28px;
+    }
+}
+
+/* Desktops Grandes (1440px - 1919px) */
+@media (min-width: 1440px) and (max-width: 1919px) {
+    main {
+        width: 1200px;
+    }
+
+    .header-content {
+        height: 750px;
+    }
+
+    .titles-header h1 {
+        font-size: 64px;
+    }
+
+    .style-small {
+        font-size: 32px;
+        width: 22%;
+    }
+
+    .titles-header p {
+        width: 32%;
+        font-size: 18px;
+    }
+
+    .cards img {
+        height: 240px;
+        object-fit: cover;
+    }
+}
+
+/* Tablets Grandes e Desktops Pequenos (926px - 1199px) */
+@media (min-width: 926px) and (max-width: 1199px) {
+    main {
+        width: 90%;
+        max-width: 1000px;
+    }
+
+    .titles-header h1 {
+        font-size: 48px;
+    }
+
+    .style-small {
+        font-size: 24px;
+        width: 35%;
+    }
+
+    .titles-header p {
+        width: 45%;
+        font-size: 16px;
+    }
+
+    .cards-section {
+        gap: 10px;
+    }
+
+    .cards img {
+        height: 200px;
+        object-fit: cover;
+    }
+}
+
+/* Tablets (768px - 925px) */
+@media (min-width: 768px) and (max-width: 925px) {
+    main {
+        width: 90%;
+        padding: 15px;
+    }
+
+    .header-content {
+        height: 600px;
+    }
+
+    .titles-header {
+        padding: 0 30px;
+        margin-top: 18%;
+    }
+
+    .titles-header h1 {
+        font-size: 42px;
+    }
+
+    .style-small {
+        font-size: 22px;
+        width: 50%;
+    }
+
+    .titles-header p {
+        width: 60%;
+        font-size: 15px;
+    }
+
+    .ul-links li {
+        margin-right: 24px;
+    }
+
+    .ul-links li a {
+        padding: 14px;
+        font-size: 11px;
+    }
+
+    .cards-section {
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .cards {
+        width: 48%;
+    }
+
+    .cards:last-child {
+        width: 100%;
+        max-width: 400px;
+        margin: 0 auto;
+    }
+
+    .cards img {
+        width: 100%;
+        height: auto;
+    }
+}
+
+/* Tablets Pequenos (481px - 767px) */
+@media (min-width: 481px) and (max-width: 767px) {
+    main {
+        width: 95%;
+        padding: 10px;
+    }
+
+    .header-content {
+        height: 550px;
+    }
+
+    .titles-header {
+        padding: 0 20px;
+        margin-top: 25%;
+    }
+
+    .titles-header h1 {
+        font-size: 36px;
+    }
+
+    .style-small {
+        font-size: 20px;
+        width: 65%;
+    }
+
+    .titles-header p {
+        width: 75%;
+        font-size: 14px;
+    }
+
+    .ul-links li {
+        margin-right: 20px;
+    }
+
+    .ul-links li a {
+        padding: 12px;
+        font-size: 11px;
+    }
+
+    .cards-section {
+        flex-direction: column;
+        padding: 20px;
+        gap: 20px;
+    }
+
+    .cards {
+        width: 100%;
+        max-width: 450px;
+        margin: 0 auto;
+    }
+
+    .cards img {
+        width: 100%;
+        height: auto;
+    }
+}
+
+/* Celulares (max-width: 480px) */
+@media (max-width: 480px) {
+    main {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .header-content {
+        height: 500px;
+    }
+
+    .titles-header {
+        padding: 0 15px;
+        margin-top: 35%;
+    }
+
+    .titles-header h1 {
+        font-size: 28px;
+    }
+
+    .style-small {
+        font-size: 16px;
+        width: 80%;
+    }
+
+    .titles-header p {
+        width: 90%;
+        font-size: 12px;
+        padding: 12px;
+    }
+
+    .ul-links li {
+        margin-right: 12px;
+        margin-top: 20px;
+    }
+
+    .ul-links li a {
+        padding: 10px;
+        font-size: 10px;
+    }
+
+    .cards-section {
+        flex-direction: column;
+        padding: 15px;
+        gap: 15px;
+    }
+
+    .cards {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .cards img {
+        width: 100%;
+        height: auto;
+    }
+
+    .cards p {
+        padding: 12px;
+        font-size: 13px;
+    }
+
+    .description {
+        padding: 12px;
+    }
+
+    .description h2 {
+        padding: 12px;
+        font-size: 20px;
+    }
+
+    .description p {
+        font-size: 14px;
+    }
+
+    .back-to-top {
+        width: 45px;
+        height: 45px;
+        font-size: 20px;
+        bottom: 20px;
+        right: 20px;
+    }
+}
+
+/* Celulares Pequenos (max-width: 360px) */
+@media (max-width: 360px) {
+    .titles-header h1 {
+        font-size: 24px;
+    }
+
+    .style-small {
+        font-size: 14px;
+        width: 90%;
+    }
+
+    .titles-header p {
+        font-size: 11px;
+        padding: 10px;
+    }
+
+    .ul-links li a {
+        padding: 8px;
+        font-size: 9px;
+    }
+}
